@@ -1,0 +1,58 @@
+ /* === Estilos CSS: Centrado y Diseño === */
+        body {
+            /* Centrado total con Flexbox */
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #282c34; 
+            overflow: hidden; 
+        }
+
+        #contenedor-central {
+            /* Contenedor del botón. Posición relativa para el cálculo de coordenadas */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            background-color: #3a404a;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            /* Importante: para que el JS calcule las coordenadas relativas correctamente */
+            position: relative; 
+        }
+
+        #boton-circular {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #61afef;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 5px #4a8ac1;
+            transition: all 0.1s ease;
+            z-index: 10;
+        }
+
+        #boton-circular:active {
+            box-shadow: 0 2px #4a8ac1;
+            transform: translateY(3px);
+        }
+
+        /* === Estilos de la Partícula === */
+        .firework-particle {
+            position: absolute;
+            /* Partículas más pequeñas para simular rayos de explosión */
+            width: 12px;
+            height: 12px; 
+            border-radius: 50%;
+            opacity: 0;
+            pointer-events: none;
+            /* Inicialmente centrado en su propio punto de origen (esquina superior izquierda) */
+            transform: translate(-50%, -50%); 
+            z-index: 5;
+        }
